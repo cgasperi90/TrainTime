@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Train Times!</title>
+        <!--Bootstrap and CSS-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!--jQuery-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!--Firebase and References-->
+        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Anytime is Train Time</h1>
+                    <p class="lead">Choo Choo. Chee Chee.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                  <strong>Current Train Schedule</strong>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div><br>
+
+            <div class="card">
+                <div class="card-header">
+                  <strong>Add Train</strong>
+                </div>
+                <div class="card-body">
+                    <label><strong>Time</strong></label>
+                    <input class="form-control" type="text" placeholder="Default input"><br>
+                    <label><strong>Destination</strong></label>
+                    <input class="form-control" type="text" placeholder="Default input">
+                    <label><strong>First Train Time (HH:mm - Military Time)</strong></label>
+                    <input class="form-control" type="text" placeholder="Default input">
+                    <label><strong>Frequency (min)</strong></label>
+                    <input class="form-control" type="text" placeholder="Default input">
+                </div>
+            </div>
+
+
+
+        </div>
+        <script src="assets/javascript/app.js"></script>
+    </body>
+</html>
