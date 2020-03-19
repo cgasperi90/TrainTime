@@ -29,9 +29,9 @@
                   <strong>Current Train Schedule</strong>
                 </div>
                 <div class="card-body">
-                    <table>
+                    <table class="table table-striped table-dark">
                         <tr>
-                            <th>Train Time</th>
+                            <th>Train Name</th>
                             <th>Destination</th>
                             <th>Frequency</th>
                             <th>Next Arrival</th>
@@ -47,8 +47,8 @@
                   <strong>Add Train</strong>
                 </div>
                 <div class="card-body">
-                    <label><strong>Time</strong></label>
-                    <input id="time-input" class="form-control" type="text"><br>
+                    <label><strong>Train Name</strong></label>
+                    <input id="name-input" class="form-control" type="text"><br>
                     <label><strong>Destination</strong></label>
                     <input id="destination-input" class="form-control" type="text">
                     <label><strong>First Train Time (HH:mm - Military Time)</strong></label>
@@ -56,7 +56,7 @@
                     <label><strong>Frequency (min)</strong></label>
                     <input id="frequency-input" class="form-control" type="text"><br>
 
-                    <a id="submit-button" class="btn btn-primary">Submit</a>
+                    <input type="submit" id="submit-button" class="btn btn-primary"></input>
                 </div>
             </div>
 

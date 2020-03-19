@@ -17,22 +17,33 @@ $("#submit-button").on("click", function(event) {
 
     event.preventDefault();
 
-    var time = $("#time-input").val().trim();
+    var name = $("#name-input").val().trim();
     var destination = $("#destination-input").val().trim();
     var firstTrain = $("#first-train-time").val().trim();
     var frequency = $("#frequency-input").val().trim();
 
     database.ref().push({
-        time: time,
+        name: name,
         destination: destination,
         firstTrain: firstTrain,
         frequency: frequency
     });
+
+    $("#name-input").val("");
+    $("#destination-input").val("");
+    $("#first-train-time").val("");
+    $("#frequency-input").val("");
 
 });
 
 database.ref().on("child_added", function(snapshot) {
     console.log(snapshot.val());
 
-    $("table").append("<tr><td>" + snapshot.val().time + "</td><td>" + snapshot.val().destination + "</td><td>" + snapshot.val().firstTrain + "</td><td>" + snapshot.val().frequency + "</td></tr>")
+    $("table").append("<tr><td>" +
+     snapshot.val().name + "</td><td>" + 
+     snapshot.val().destination + "</td><td>" + 
+     snapshot.val().firstTrain + "</td><td>" + 
+     snapshot.val().frequency + "</td></tr>");
+
+
 });
