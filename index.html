@@ -5,6 +5,7 @@
         <!--Bootstrap and CSS-->
         <link rel="stylesheet" href="assets/css/styles.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
         <!--jQuery-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -28,9 +29,16 @@
                   <strong>Current Train Schedule</strong>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <table>
+                        <tr>
+                            <th>Train Time</th>
+                            <th>Destination</th>
+                            <th>Frequency</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                    </table>
+                  
                 </div>
             </div><br>
 
@@ -40,13 +48,15 @@
                 </div>
                 <div class="card-body">
                     <label><strong>Time</strong></label>
-                    <input class="form-control" type="text" placeholder="Default input"><br>
+                    <input id="time-input" class="form-control" type="text"><br>
                     <label><strong>Destination</strong></label>
-                    <input class="form-control" type="text" placeholder="Default input">
+                    <input id="destination-input" class="form-control" type="text">
                     <label><strong>First Train Time (HH:mm - Military Time)</strong></label>
-                    <input class="form-control" type="text" placeholder="Default input">
+                    <input id="first-train-time" class="form-control" type="text">
                     <label><strong>Frequency (min)</strong></label>
-                    <input class="form-control" type="text" placeholder="Default input">
+                    <input id="frequency-input" class="form-control" type="text"><br>
+
+                    <a id="submit-button" class="btn btn-primary">Submit</a>
                 </div>
             </div>
 
