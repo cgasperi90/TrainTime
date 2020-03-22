@@ -12,6 +12,13 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+//We are going to display the current time on the page so users know what the time is
+var currentTime = moment();
+$("#current-time").text("Current Time: " + moment(currentTime).format("LT"));
+$("#current-date").text("Today's Date: " + moment(currentTime).format("LL"));
+
+
+
 //here we will make a on click function for when the user clicks the submit button
 $("#submit-button").on("click", function(event) {
 
@@ -22,10 +29,26 @@ $("#submit-button").on("click", function(event) {
     var firstTrain = $("#first-train-time").val().trim();
     var frequency = $("#frequency-input").val().trim();
 
+    var firstTimeConverted = moment(firstTrain, "HH:mm");
+    console.log(firstTimeConverted);
+    
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes")
+    console.log(diffTime);
+
+    var tRemainder = diffTime % frequency;
+    console.log(tRemainder);
+
+    var tMinutesTillTrain = frequency - tRemainder;
+    console.log(tMinutesTillTrain);
+
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    console.log(moment(nextTrain).format("hh:mm A"));
+
     database.ref().push({
         name: name,
         destination: destination,
-        firstTrain: firstTrain,
+        tMinutesTillTrain: tMinutesTillTrain,
+        nextTrain: JSON.parse(JSON.stringify(nextTrain.format("hh:mm A"))),
         frequency: frequency
     });
 
@@ -34,16 +57,14 @@ $("#submit-button").on("click", function(event) {
     $("#first-train-time").val("");
     $("#frequency-input").val("");
 
+
+
 });
 
 database.ref().on("child_added", function(snapshot) {
     console.log(snapshot.val());
 
-    $("table").append("<tr><td>" +
-     snapshot.val().name + "</td><td>" + 
-     snapshot.val().destination + "</td><td>" + 
-     snapshot.val().firstTrain + "</td><td>" + 
-     snapshot.val().frequency + "</td></tr>");
+    $("table").append("<tr><td>" + snapshot.val().name + "</td><td>" + snapshot.val().destination + "</td><td>" + "<p>Every " + snapshot.val().frequency + " Minutes</p>" + "</td><td>" + snapshot.val().nextTrain + "</td><td>" + snapshot.val().tMinutesTillTrain + "</td></tr>");
 
 
 });

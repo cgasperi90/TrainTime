@@ -1,6 +1,10 @@
 .card-header {
     color: black;
 }
-.card {
+.container {
+    margin-top: 15px;
     margin-bottom: 15px;
+}
+#submit-button {
+    background-color: #39A2AE;
 }
