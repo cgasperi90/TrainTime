@@ -13,9 +13,23 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 //We are going to display the current time on the page so users know what the time is
-var currentTime = moment();
+var currentTime;
+var date;
 $("#current-time").text("Current Time: " + moment(currentTime).format("LT"));
-$("#current-date").text("Today's Date: " + moment(currentTime).format("LL"));
+
+//function so that the time updates every second instead of refreshing the page
+//to see the updated time
+var update = function() {
+    date = moment(new Date());
+    currentTime.html(date.format("dddd, MMMM Do YYYY, hh:mm:ss A"));
+}
+
+//This updates the document every second and runs the update function
+$(document).ready(function() {
+    currentTime = $("#current-time");
+    update();
+    setInterval(update, 1000);
+});
 
 
 
