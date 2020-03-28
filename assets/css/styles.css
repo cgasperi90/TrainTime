@@ -1,10 +1,11 @@
-.card-header {
-    color: black;
+.jumbotron {
+    background-color: #E88873;
 }
 .container {
     margin-top: 15px;
     margin-bottom: 15px;
 }
 #submit-button {
-    background-color: #39A2AE;
+    background-color: #E88873;
+    border: #E88873;
 }

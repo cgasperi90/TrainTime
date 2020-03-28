@@ -15,7 +15,7 @@ var database = firebase.database();
 //We are going to display the current time on the page so users know what the time is
 var currentTime;
 var date;
-$("#current-time").text("Current Time: " + moment(currentTime).format("LT"));
+
 
 //function so that the time updates every second instead of refreshing the page
 //to see the updated time

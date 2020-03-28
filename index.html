@@ -3,9 +3,11 @@
     <head>
         <title>Train Times!</title>
         <!--Bootstrap and CSS-->
+        <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/styles.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        
+        <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+
         <!--jQuery-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -16,6 +18,9 @@
         <!--Moments.js-->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
+        <!--Font Awesome-->
+        <script src="https://kit.fontawesome.com/e977063538.js" crossorigin="anonymous"></script>
+
     </head>
 
     <body>
@@ -24,8 +29,8 @@
                 <div class="container">
                     <h1 class="display-4">Anytime is Train Time</h1>
                     <p class="lead">Choo Choo. Chee Chee.</p>
+                    <hr class="my-4">
                     <p class="lead" id="current-time"></p>
-                    <p class="lead" id="current-date"></p>
                 </div>
             </div>
 
@@ -61,7 +66,7 @@
                     <label><strong>Frequency (min)</strong></label>
                     <input id="frequency-input" class="form-control" type="text"><br>
 
-                    <input type="submit" id="submit-button" class="btn btn-primary"></input>
+                    <button id="submit-button" class="btn btn-primary"><i class="fas fa-train"></i> Train</button>
                 </div>
             </div>
 
