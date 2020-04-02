@@ -82,3 +82,11 @@ database.ref().on("child_added", function(snapshot) {
 
 
 });
+
+$(document).keypress(function(e) 
+{
+if (e.which == 13) 
+    {
+        $("#submit-button").click();
+    };
+});
