@@ -1,1 +1,3 @@
 # TrainTime
+
+The Train Time application is an intuitive way of calculating the time of arrival for a train, how frequent a train will come to the station, and how many minutes away a train is from arriving. A user has a couple different inputs to submit information that is based on the train. The user will submit a train name, a destination, a frequency, and the time it will initially arrive. From that information that the user submits, the application will make the calculations and give back the information to the user in the form of a table. The calculated information is also stored in a database for future use. The application also provides a clock at the top of the page so the user can refer to and know the current time in order to fill out the form.
